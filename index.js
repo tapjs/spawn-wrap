@@ -24,13 +24,13 @@ var debug = doDebug ? function () {
   process.stderr.write(message + '\n')
 } : function () {}
 
-var shebang = process.platform === 'os390' ?
+var isWindows = require('./lib/is-windows')()
+
+var shebang = (process.platform === 'os390' || isWindows) ?
   '#!/bin/env ' : '#!'
 
 var shim = shebang + process.execPath + '\n' +
   fs.readFileSync(__dirname + '/shim.js')
-
-var isWindows = require('./lib/is-windows')()
 
 var pathRe = /^PATH=/
 if (isWindows) pathRe = /^PATH=/i
