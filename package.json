@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/istanbuljs/spawn-wrap#readme",
   "devDependencies": {
-    "standard-version": "^7.1.0",
+    "standard-version": "^8.0.1",
     "tap": "^14.10.5"
   },
   "files": [
